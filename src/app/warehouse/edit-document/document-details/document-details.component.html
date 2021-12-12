@@ -1,0 +1,31 @@
+<div class="row bg-light p-3 m-0">
+  <div class="col-4">
+    <p>Transaction Type: {{ document?.$transactionType }}</p>
+    <p>
+      Date of Creation:
+      {{ document?.$dateOfCreation | date: "EEEE, MMMM d, yyyy" }}
+    </p>
+    <p *ngIf="document?.$status === 'recorded'">
+      Date of Recording:
+      {{ document?.$dateOfRecording | date: "EEEE, MMMM d, yyyy" }}
+    </p>
+  </div>
+  <div class="col-4">
+    <p><u>BuisinessPartner</u></p>
+    <p>{{ document?.$businessPartner.name }}</p>
+    <p>
+      {{ document?.$businessPartner.city }},
+      {{ document?.$businessPartner.address }}
+    </p>
+  </div>
+  <div class="col-4">
+    <p>Status: {{ document?.$status }}</p>
+    <button
+      *ngIf="document?.$status === 'opened'"
+      class="btn btn-info"
+      (click)="recordDocument()"
+    >
+      Record Document
+    </button>
+  </div>
+</div>

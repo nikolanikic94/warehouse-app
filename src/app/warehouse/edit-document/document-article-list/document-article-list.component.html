@@ -1,0 +1,19 @@
+<div class="bg-dark text-light text-center h4 m-0 p-2">Document Items</div>
+<table class="table table-bordered table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Article</th>
+      <th scope="col">Price</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Total Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of items">
+      <td>{{ item?.$article }}</td>
+      <td>{{ item?.$price }}</td>
+      <td>{{ item?.$quantity }}</td>
+      <td>{{ item?.$price * item?.quantity | number }}</td>
+    </tr>
+  </tbody>
+</table>

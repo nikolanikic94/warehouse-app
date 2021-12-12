@@ -1,0 +1,86 @@
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th [ngClass]="{ invisible: tableSettings?.dateOfCreation === false }">
+        Date of Creation
+        <button
+          class="btn btn-link text-warning"
+          (click)="sortByCriteria('dateOfCreation')"
+        >
+          <i class="fas fa-sort"></i>
+        </button>
+      </th>
+      <th [ngClass]="{ invisible: tableSettings?.dateOfRecording === false }">
+        Date of Recording
+        <button
+          class="btn btn-link text-warning"
+          (click)="sortByCriteria('dateOfRecording')"
+        >
+          <i class="fas fa-sort"></i>
+        </button>
+      </th>
+      <th [ngClass]="{ invisible: tableSettings?.status === false }">
+        Status
+        <button
+          class="btn btn-link text-warning"
+          (click)="sortByCriteria('status')"
+        >
+          <i class="fas fa-sort"></i>
+        </button>
+      </th>
+      <th [ngClass]="{ invisible: tableSettings?.transactionType === false }">
+        Transaction Type
+        <button
+          class="btn btn-link text-warning"
+          (click)="sortByCriteria('transactionType')"
+        >
+          <i class="fas fa-sort"></i>
+        </button>
+      </th>
+      <th [ngClass]="{ invisible: tableSettings?.buisinessPartner === false }">
+        Buisiness Partner
+      </th>
+      <th
+        [ngClass]="{
+          invisible: tableSettings?.buisinessPartnerLocation === false
+        }"
+      >
+        Buisiness Partner Location
+      </th>
+      <th [ngClass]="{ invisible: tableSettings?.year === false }">Year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      *ngFor="let document of documents"
+      [routerLink]="['/warehouse', document.id]"
+    >
+      <td [ngClass]="{ invisible: tableSettings?.dateOfCreation === false }">
+        {{ document.$dateOfCreation | date: "MMM d, yyyy" }}
+      </td>
+      <td [ngClass]="{ invisible: tableSettings?.dateOfRecording === false }">
+        {{ document.$dateOfRecording | date: "MMM d, yyyy" }}
+      </td>
+      <td [ngClass]="{ invisible: tableSettings?.status === false }">
+        {{ document.$status }}
+      </td>
+      <td [ngClass]="{ invisible: tableSettings?.transactionType === false }">
+        {{ document.$transactionType }}
+      </td>
+      <td [ngClass]="{ invisible: tableSettings?.buisinessPartner === false }">
+        {{ document.$businessPartner.name }}
+      </td>
+      <td
+        [ngClass]="{
+          invisible: tableSettings?.buisinessPartnerLocation === false
+        }"
+      >
+        {{ document.$businessPartner.city }},
+        {{ document.$businessPartner.address }}
+      </td>
+      <td [ngClass]="{ invisible: tableSettings?.year === false }">
+        {{ document.$year }}
+      </td>
+    </tr>
+  </tbody>
+</table>

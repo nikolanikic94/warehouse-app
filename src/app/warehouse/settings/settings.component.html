@@ -1,0 +1,91 @@
+<div class="row align-items-baseline mr-1">
+  <div *ngIf="showSettings === true">
+    <label class="mr-1" for="dateOfCreation">Date of Creation</label>
+    <input
+      type="checkbox"
+      class="mr-3"
+      name="dateOfCreation"
+      id="dateOfCreation"
+      [(ngModel)]="tableSettings.dateOfCreation"
+      (change)="changeTableSettings()"
+    />
+
+    <label class="mr-1" for="dateOfRecording">Date of Recording</label>
+    <input
+      type="checkbox"
+      class="mr-3"
+      name="dateOfRecording"
+      id="dateOfRecording"
+      [(ngModel)]="tableSettings.dateOfRecording"
+      (change)="changeTableSettings()"
+    />
+
+    <label class="mr-1" for="status">Status</label>
+    <input
+      type="checkbox"
+      class="mr-3"
+      name="status"
+      id="status"
+      [(ngModel)]="tableSettings.status"
+      (change)="changeTableSettings()"
+    />
+
+    <label class="mr-1" for="transactionType">Transaction Type</label>
+    <input
+      type="checkbox"
+      class="mr-3"
+      name="transactionType"
+      id="transactionType"
+      [(ngModel)]="tableSettings.transactionType"
+      (change)="changeTableSettings()"
+    />
+
+    <label class="mr-1" for="buissiniesPartner">Buissinies Partner</label>
+    <input
+      type="checkbox"
+      class="mr-3"
+      name="buissiniesPartner"
+      id="buissiniesPartner"
+      [(ngModel)]="tableSettings.buisinessPartner"
+      (change)="changeTableSettings()"
+    />
+
+    <label class="mr-1" for="buissiniesPartnerLocation"
+      >Buissinies Partner Location</label
+    >
+    <input
+      type="checkbox"
+      class="mr-3"
+      name="buissiniesPartnerLocation"
+      id="buissiniesPartnerLocation"
+      [(ngModel)]="tableSettings.buisinessPartnerLocation"
+      (change)="changeTableSettings()"
+    />
+
+    <label class="mr-1" for="year">Year</label>
+    <input
+      type="checkbox"
+      class="mr-3"
+      name="year"
+      id="year"
+      [(ngModel)]="tableSettings.year"
+      (change)="changeTableSettings()"
+    />
+  </div>
+  <div class="d-flex">
+    <button
+      *ngIf="showSettings === false"
+      class="btn btn-primary"
+      (click)="toggleSettings()"
+    >
+      open table settings
+    </button>
+    <button
+      *ngIf="showSettings === true"
+      class="btn btn-secondary"
+      (click)="toggleSettings()"
+    >
+      close table settings
+    </button>
+  </div>
+</div>

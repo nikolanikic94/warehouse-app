@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col">
+    <app-document-details
+      (recordDocEmitter)="recordDocument($event)"
+    ></app-document-details>
+  </div>
+</div>
+<div class="row">
+  <div
+    [ngClass]="{ 'col-9': document?.$status === 'opened' }"
+    [ngClass]="{ 'col-12': document?.$status === 'recorded' }"
+  >
+    <app-document-article-list [items]="items"></app-document-article-list>
+  </div>
+  <div *ngIf="document?.$status === 'opened'" class="col-3">
+    <app-add-new-document
+      (addNewEmitter)="addNewItem($event)"
+    ></app-add-new-document>
+  </div>
+</div>

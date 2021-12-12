@@ -1,0 +1,33 @@
+th {
+  vertical-align: middle !important;
+}
+
+thead tr th button {
+  transition: all 0.3s ease-out;
+}
+
+thead tr th button i {
+  transition: all 0.15s ease-out;
+}
+
+thead tr th button i:hover {
+  color: rgb(255, 246, 116);
+}
+
+thead tr th button i {
+  font-size: 25px;
+}
+
+.invisible {
+  display: none;
+}
+
+tbody tr {
+  transition: all 0.15s ease-in;
+}
+
+tbody tr:hover {
+  cursor: pointer;
+  background-color: rgb(240, 240, 240);
+  color: black;
+}

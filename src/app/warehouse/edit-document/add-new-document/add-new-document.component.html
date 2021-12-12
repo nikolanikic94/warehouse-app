@@ -1,0 +1,41 @@
+<form class="p-3" [formGroup]="addNewItemForm" (submit)="onSubmit()">
+  <h3>Add New Item</h3>
+  <div class="form-group">
+    <label for="article">Article</label>
+    <select
+      name="article"
+      class="form-control"
+      id="article"
+      formControlName="article"
+    >
+      <option *ngFor="let article of articles" value="{{ article?.code }}">
+        {{ article?.name }}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="price">Price</label>
+    <input
+      type="number"
+      min="0"
+      class="form-control"
+      name="price"
+      id="price"
+      formControlName="price"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="quantity">Quantity</label>
+    <input
+      type="number"
+      min="0"
+      class="form-control"
+      name="quantity"
+      id="quantity"
+      formControlName="quantity"
+    />
+  </div>
+  <input class="btn btn-info" type="submit" value="Save" />
+</form>
